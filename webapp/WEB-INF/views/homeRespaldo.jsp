@@ -48,7 +48,7 @@
 													pattern="dd/MM/yyyy" /></td>
 											<td><c:choose>
 													<c:when test="${movie.status=='Active' }">
-														<span class="alert alert-success"">ACTIVE</span>
+														<span class="alert alert-success">ACTIVE</span>
 													</c:when>
 													<c:otherwise>
 														<span class="alert alert-danger">INACTIVE</span>

@@ -1,9 +1,7 @@
 package yuli.app.controller;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.LinkedList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,13 +52,12 @@ public class HomeController {
 		return "home";
 	}
 
-//	@RequestMapping(value = "/detail/{id}/{date}", method = RequestMethod.GET)
-	@RequestMapping(value = "/detail", method = RequestMethod.GET)
-//	public String showDetail(Model model, @PathVariable("id") int idMovie, @PathVariable("date") String date) {
-	public String showDetail(Model model, @RequestParam("idMovie") int idMovie, @RequestParam("date") String date) {
-
-		model.addAttribute("movie", serviceMovies.searchById(idMovie));
-
+	@RequestMapping(value = "/detail/{id}/{date}",method=RequestMethod.GET)		
+	public String showDetail(Model model,@PathVariable("id") int idMovie, @PathVariable("date") String date) {
+					
+		model.addAttribute("movie", IMoviesService.searchById(idMovie));
+		// TODO - Buscar en la base de datos los horarios.		
+		
 		return "detail";
 	}
 
