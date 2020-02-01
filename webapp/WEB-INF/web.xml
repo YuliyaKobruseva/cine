@@ -12,6 +12,11 @@
 			<param-value>/WEB-INF/spring/dispatcher-servlet.xml</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
+
+		<!-- configuracion para poder cargar archivos en la web -->
+		<multipart-config>
+			<location>d:\Spring\tmp</location>
+		</multipart-config>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>springmvc</servlet-name>
@@ -29,5 +34,10 @@
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
+	
+<!-- 	Para que no se agregue parámetro "jsessionid" en la URL, hay que cambiar la configuración del session tracking mode para que el ID de la Sesión se guarde en COOKIES. -->
+	<session-config>
+		<tracking-mode>COOKIE</tracking-mode>
+	</session-config>
 
 </web-app>
