@@ -45,8 +45,8 @@
 						<div class="panel-body">
 							<p>
 								Título Original : ${movie.title} <br> 
-								Actores : 					 <br>
-								Director:  <br> 
+								Actores : ${movie.detail.actors}<br>
+								Director:  ${movie.detail.director}<br> 
 								Clasificación: ${movie.classification} <br>
 								Duración: ${movie.duration}<br> 
 								Género: ${movie.genre} <br> 
@@ -123,7 +123,7 @@
 						</div>
 						<div class="panel-body">
 							<iframe width="100%" height="315"
-								src=""> </iframe>
+								src="${movie.detail.trailer}"> </iframe>
 						</div>
 					</div>
 				</div>
@@ -133,14 +133,7 @@
 							<h3 class="panel-title">SINOPSIS</h3>
 						</div>
 						<div class="panel-body">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-								Maecenas sed diam eget risus varius blandit sit amet non magna.
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-								Praesent commodo cursus magna, vel scelerisque nisl consectetur
-								et. Cras mattis consectetur purus sit amet fermentum. Duis
-								mollis, est non commodo luctus, nisi erat porttitor ligula, eget
-								lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed
-								consectetur.</p>
+							<p>${movie.detail.synopsis}</p>
 						</div>
 					</div>
 				</div>

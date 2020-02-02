@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Movie {
 
+	//Para que en form hay valores por defecto tenemos que inicializar variables y crear constructor vacio
 	private int id;
 	private String title;
 	private int duration;
@@ -12,6 +13,12 @@ public class Movie {
 	private String img = "cinema.png"; // default img
 	private Date datePremiere;
 	private String status = "Active";
+	private Detail detail;
+	
+	
+	public Movie() {
+		super();
+	}
 
 	public int getId() {
 		return id;
@@ -76,11 +83,40 @@ public class Movie {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+	
+	public Detail getDetail() {
+		return detail;
+	}
+
+	public void setDetail(Detail detail) {
+		this.detail = detail;
+	}
 
 	@Override
 	public String toString() {
-		return "Movie [id=" + id + ", title=" + title + ", duration=" + duration + ", classification=" + classification
-				+ ", genre=" + genre + ", img=" + img + ", datePremiere=" + datePremiere + ", status=" + status + "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("Movie [id=");
+		builder.append(id);
+		builder.append(", title=");
+		builder.append(title);
+		builder.append(", duration=");
+		builder.append(duration);
+		builder.append(", classification=");
+		builder.append(classification);
+		builder.append(", genre=");
+		builder.append(genre);
+		builder.append(", img=");
+		builder.append(img);
+		builder.append(", datePremiere=");
+		builder.append(datePremiere);
+		builder.append(", status=");
+		builder.append(status);
+		builder.append(", detail=");
+		builder.append(detail);
+		builder.append("]");
+		return builder.toString();
 	}
+
+	
 
 }
