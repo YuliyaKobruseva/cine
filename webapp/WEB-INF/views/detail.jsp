@@ -61,7 +61,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title">
-						<span class="label label-success">20-05-2017</span>
+						<span class="label label-success">${dateSearch}</span>
 					</h3>
 				</div>
 				<div class="panel-body">
@@ -74,41 +74,13 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>16:00</td>
-								<td>Sala 1</td>
-								<td>$10</td>
-							</tr>
-							<tr>
-								<td>18:00</td>
-								<td>Sala 1</td>
-								<td>$10</td>
-							</tr>
-							<tr>
-								<td>20:00</td>
-								<td>Sala 1</td>
-								<td>$10</td>
-							</tr>
-							<tr>
-								<td>14:00</td>
-								<td>Sala 1</td>
-								<td>$10</td>
-							</tr>
-							<tr>
-								<td>16:00</td>
-								<td>Sala 1</td>
-								<td>$10</td>
-							</tr>
-							<tr>
-								<td>20:00</td>
-								<td>Sala 1</td>
-								<td>$10</td>
-							</tr>
-							<tr>
-								<td>22:00</td>
-								<td>Sala 1</td>
-								<td>$10</td>
-							</tr>
+							<c:forEach items="timetables" var="timetable">
+								<tr>
+									<td>${timetable.hour}</td>
+									<td>${timetable.hall}</td>
+									<td>$${timetable.price}</td>
+								</tr>
+							</c:forEach>							
 						</tbody>
 					</table>
 				</div>
